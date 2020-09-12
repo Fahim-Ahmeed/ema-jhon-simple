@@ -17,5 +17,6 @@ nav a{
     padding:5px;
 }
 nav a:hover{
+    display:inline-block;
     background-color:lightgray;
 }

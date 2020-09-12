@@ -1,0 +1,14 @@
+.shipment input{
+   
+  display:block;
+  margin-top:20px;
+  padding:5px;
+    
+}
+.shipment{
+  margin-top:30px;
+  margin-left:40px;
+}
+.error{
+    color:red;
+}

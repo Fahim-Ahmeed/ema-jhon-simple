@@ -4,7 +4,7 @@ import { useState } from 'react';
 import fakeData from '../../fakeData';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { getDatabaseCart, processOrder } from '../../utilities/databaseManager';
 import { removeFromDatabaseCart } from '../../utilities/databaseManager';
 import Item from '../Review item/Item'
@@ -13,10 +13,9 @@ import  giphy from'../../images/giphy.gif';
 const Review = () => {
     const [cart,setCart]=useState([]);
     const [placeOrder,setPlaceOrder]=useState(false);
-    const addPlaceOrder=()=>{
-      processOrder()
-      setCart([]);
-      setPlaceOrder(true);
+    const history=useHistory()
+    const handleProceedCheckout=()=>{
+     history.push('/shipment')
     }
     useEffect(() =>{
         //cart
@@ -58,7 +57,7 @@ const Review = () => {
            <div className="col-2">
               <Cart name={cart}>
           
-                <button className="add-button" onClick={addPlaceOrder}><FontAwesomeIcon icon={faShoppingCart} /> place Order</button>
+                <button className="add-button" onClick={handleProceedCheckout}><FontAwesomeIcon icon={faShoppingCart} /> Proceed checkout</button>
                
               </Cart>
                
